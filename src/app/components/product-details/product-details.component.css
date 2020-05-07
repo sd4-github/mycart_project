@@ -1,0 +1,10 @@
+.card-body{
+    background-color: #1F1641;
+}
+
+.name:hover, .name:active{
+    color: #05ACD3;
+}
+.price:hover, .price:active{
+    color: #05ACD3;
+}

@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar><h2 class="logo">LapCart</h2></mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="dashboard">Dashboard</a>
+      <a mat-list-item *ngIf='!token' routerLink="signup">Signup</a>
+      <a mat-list-item *ngIf='!token' routerLink="login">Login</a>
+      <a mat-list-item routerLink="profile">Profile</a>
+      <a mat-list-item *ngIf='token' style="cursor: pointer;" (click)='onLogout()'>Logout</a>
+      
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <!-- navbar bs -->
+      <div class="container">
+        <nav class="navbar navbar-expand-lg">
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto" id="link">
+              <li class="nav-item active">
+                <a class="nav-link" routerLink="home">Home<span class="sr-only">(current)</span></a>
+              </li> <br>
+              <li class="nav-item active">
+                <a class="nav-link" routerLink="cart">Cart<span class="sr-only">(current)</span></a>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search Here" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+        </nav>
+      </div>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+    

@@ -1,0 +1,11 @@
+<div class='container'>
+    <br>
+    <b>Profile</b>
+    <br>
+    <div>
+        <ul *ngFor="let u of showData">
+            <li>{{u}}</li>
+        </ul>
+        <button type="submit" class="btn btn-primary" (click)="onLogout()">logout</button>
+    </div>
+</div>

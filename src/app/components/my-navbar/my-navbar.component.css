@@ -1,0 +1,50 @@
+.sidenav-container {
+  height: 100%;
+  background: #05ACD3;
+  color: #1F1641;
+}
+
+.sidenav {
+  width: 200px;
+  background: #0486DB;
+  color: white;
+}
+
+
+.sidenav .mat-toolbar {
+  background: #1F1641;
+  color: white;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;;
+  top: 0;
+  z-index: 1;
+  background: #012172;
+  color: white;
+}
+
+.nav-link{
+  color: white;
+}
+.nav-link:active,.nav-link:hover{
+    color: #0486DB;
+}
+
+ .logo:active,.logo:hover{
+   color: #0486DB;
+   font-size: 110%;
+   }
+
+ .mat-list-base .mat-list-item {
+    color: white;
+    text-decoration: transparent;
+}
+.mat-list-item:hover{
+  color: white;
+  background-color: #1F1641;
+}
+
+
+
+ 

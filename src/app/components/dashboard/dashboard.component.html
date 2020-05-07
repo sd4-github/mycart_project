@@ -1,0 +1,41 @@
+
+<br>
+    <div class="container">
+     <b>Products</b>
+        <div class="card-deck">
+            
+            <div class="card" *ngFor='let u of products| paginate: { itemsPerPage: 3, currentPage: p }'>  
+                
+                <div class="card-body">
+                    
+                    <img class="card-img-top" [src]='u.image' [alt]='u.name' style="width:100%">
+                    
+                    <div class="container" style="text-align:center">  
+                        <br>
+                        <h5 class="card-title">{{u.name}}</h5>
+                        <p class="card-text">{{u.desc}}</p>
+                        <span>₹</span><h3 class="card-text">{{u.price}}</h3>
+                    </div>
+                                        
+                    <div class="container">
+                        <button type="button" class="button" (click)='goCart()'>Add to cart</button>
+                        <button type="button" routerLink="/details/{{u.id}}" class="button">details</button>
+                    </div>
+                </div>     
+                
+            </div>
+            <div class="container">
+                <br>
+                <!--Including the pagination control.-->
+                <div class="text-right">
+                    <pagination-controls class='paginate' (pageChange)="p = $event"></pagination-controls>
+                </div>
+            </div>
+               
+        </div>
+        
+    </div>
+
+
+
+    

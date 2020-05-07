@@ -1,0 +1,38 @@
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute,Router } from "@angular/router";
+
+@Component({
+  selector: 'app-product-details',
+  templateUrl: './product-details.component.html',
+  styleUrls: ['./product-details.component.css']
+})
+
+export class ProductDetailsComponent implements OnInit {
+
+productDetails:any;
+productData=[
+  { image: 'assets/images/Lenovo.jpeg', id: 1, name: 'Lenovo', price: '30000', desc:'Lenovo V145-AMD-A6 15.6 inch HD Thin and Light Laptop (8GB RAM/ 500GB HDD/ Windows 10 Home with Lifetime Validity/ Black/ 2.1 kg)', ram:'8gb', os:'Windows 10', processor:'intel', graphics:'Nvidea'},
+  { image: 'assets/images/Dell.jpeg', id: 2, name: 'Dell', price: '₹25000', desc:'Dell Vostro 3581 15.6-inch HD Laptop (7th Gen Core i3-7020U/4GB/1TB HDD/Windows 10 + MS Office/Intel HD Graphics/Black)', ram: '4gb', os:'windows 10', processor: 'intel core i3', graphics: 'Intel hd graphics'},
+  { image: 'assets/images/Hp.jpeg', id: 3, name: 'Hp', price: '₹20000', desc:'HP Pavilion 14-inch Laptop (9th Gen A4-9125/4GB/1TB HDD/Win 10/MS Office 2019/AMD Radeon R3 Graphics), 14-cm0123au', ram: '4gb', os: 'windows 10', processor: 'intel', graphics: 'Raedon'}
+  ,{ image: 'assets/images/Hp.jpeg', id: 4, name: 'Hp', price: '₹30000', desc:'HP Pavilion 14-inch Laptop (9th Gen A4-9125/4GB/1TB HDD/Win 10/MS Office 2019/AMD Radeon R3 Graphics), 14-cm0123au', ram: '4gb', os: 'windows 10', processor: 'intel', graphics: 'Raedon'}
+  ,{ image: 'assets/images/Hp.jpeg', id: 5, name: 'Hp', price: '₹40000', desc:'HP Pavilion 14-inch Laptop (9th Gen A4-9125/4GB/1TB HDD/Win 10/MS Office 2019/AMD Radeon R3 Graphics), 14-cm0123au', ram: '4gb', os: 'windows 10', processor: 'intel', graphics: 'Raedon'}
+  ,{ image: 'assets/images/Hp.jpeg', id: 6, name: 'Hp', price: '₹25000', desc:'HP Pavilion 14-inch Laptop (9th Gen A4-9125/4GB/1TB HDD/Win 10/MS Office 2019/AMD Radeon R3 Graphics), 14-cm0123au', ram: '4gb', os: 'windows 10', processor: 'intel', graphics: 'Raedon'}
+  ,{ image: 'assets/images/Hp.jpeg', id: 7, name: 'Hp', price: '₹35000', desc:'HP Pavilion 14-inch Laptop (9th Gen A4-9125/4GB/1TB HDD/Win 10/MS Office 2019/AMD Radeon R3 Graphics), 14-cm0123au', ram: '4gb', os: 'windows 10', processor: 'intel', graphics: 'Raedon'}
+  ,{ image: 'assets/images/Hp.jpeg', id: 8, name: 'Hp', price: '₹19000', desc:'HP Pavilion 14-inch Laptop (9th Gen A4-9125/4GB/1TB HDD/Win 10/MS Office 2019/AMD Radeon R3 Graphics), 14-cm0123au', ram: '4gb', os: 'windows 10', processor: 'intel', graphics: 'Raedon'}
+  ,{ image: 'assets/images/Hp.jpeg', id: 9, name: 'Hp', price: '₹21000', desc:'HP Pavilion 14-inch Laptop (9th Gen A4-9125/4GB/1TB HDD/Win 10/MS Office 2019/AMD Radeon R3 Graphics), 14-cm0123au', ram: '4gb', os: 'windows 10', processor: 'intel', graphics: 'Raedon'}
+]
+  constructor(private route:ActivatedRoute, private router:Router) { }
+
+  ngOnInit() {
+    
+    this.route.params.subscribe(params =>{
+      this.productDetails=this.productData.filter((data)=>{
+        return data.id==(params.id);
+      })[0];
+    });
+    // console.log(this.productDetails);
+
+  }
+  
+  
+}
