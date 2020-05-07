@@ -10,9 +10,8 @@ import { catchError } from "rxjs/operators";
 })
 export class UrlsrvcService {
 
-  // registerUrl = 'https://api09.herokuapp.com/register';
-  loginUrl = 'https://test-28ee2.firebaseio.com/register.json';
-  registerUrl ='https://test-28ee2.firebaseio.com/register.json';
+  registerUrl = 'https://api09.herokuapp.com/register';
+  loginUrl = 'https://api09.herokuapp.com/login';
 
 
   constructor(private http:HttpClient) { }
