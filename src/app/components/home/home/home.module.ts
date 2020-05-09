@@ -5,7 +5,8 @@ import { RouterModule, Routes } from "@angular/router";
 import { ReactiveFormsModule } from '@angular/forms';
 
 const homeRoute: Routes = [
-  { path: 'home', component: HomeComponent }
+  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent }
 ]
 
 

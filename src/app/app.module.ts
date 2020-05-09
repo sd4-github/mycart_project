@@ -15,14 +15,15 @@ import { MatInputModule } from "@angular/material/input";
 import { RoutingModule } from './routing/routing.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-// import { NgxPaginationModule } from "ngx-pagination";
-import { SearchPipe } from './components/my-navbar/search.pipe';
+// import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { MatSelectModule } from '@angular/material/select';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyNavbarComponent,
-    SearchPipe
+    MyNavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +40,7 @@ import { SearchPipe } from './components/my-navbar/search.pipe';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    // NgxPaginationModule 
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

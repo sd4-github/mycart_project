@@ -9,6 +9,7 @@
             *ngIf="loginForm.get('email').hasError(required) && loginForm.get('email').touched">
             email is required
         </div>
+        <br>
         password:
         <input formControlName='password' type="password" class="form-control" placeholder="enter password">
         <div class="alert alert-danger" *ngIf="!loginForm.get('password').valid && loginForm.get('email').touched">

@@ -39,10 +39,21 @@
                 <a class="nav-link" routerLink="cart">Cart<span class="sr-only">(current)</span></a>
               </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search Here" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+            <!-- <div class="form-inline my-2 my-lg-0">
+              <select class="form-control mr-sm-2" [(ngModel)]='searchText' name='search'>
+                <option *ngFor='let u of productData | filter: searchText' routerLink='/details/{{u.id}}'>
+                  {{u.name}}
+                </option>
+              </select>
+            </div> -->
+            <mat-form-field>
+              <mat-label>Filter Products</mat-label>
+              <mat-select>
+                <mat-option *ngFor="let u of productData">
+                  <a routerLink='/details/{{u.id}}'>{{u.name}}</a>
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
           </div>
         </nav>
       </div>

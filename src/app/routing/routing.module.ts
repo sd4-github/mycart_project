@@ -13,8 +13,7 @@ const routes:Routes=[
     path: '', 
     loadChildren: () => import('../components/cart/cart/cart.module').then(module => module.CartModule)
   },                                                                     //lazy loading new method
-  { path: '', loadChildren: '../components/product-details/details/details.module#DetailsModule'}
-  
+  { path: '', loadChildren: '../components/product-details/details/details.module#DetailsModule'}  
 ]
 
 @NgModule({
