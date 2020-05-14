@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { CartService } from 'src/app/services/cart.service';
 
 
 @Component({
@@ -20,13 +21,16 @@ export class DashboardComponent implements OnInit {
     ,{ id: 8, name: 'Hp', price: '19000', image: 'assets/images/Hp.jpeg', desc:'HP Pavilion 14-inch HD Laptop' }
     ,{ id: 9, name: 'Hp', price: '21000', image: 'assets/images/Hp.jpeg', desc:'HP Pavilion 14-inch HD Laptop' }
   ]
-  constructor(private router:Router) { }
+  constructor(private router:Router, private cartSrvc:CartService, private route:ActivatedRoute) { }
 
   ngOnInit() {
   }
   
-  goCart(){
+  goCart(product){
+    this.cartSrvc.addToCart(product);
+    // console.log(product);
     this.router.navigate(['cart']);
+    window.alert('Your product has been added to the cart!');
   }
 
   

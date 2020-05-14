@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class MyNavbarComponent {
   token;
-  searchText; 
+  term; 
   
   productData = [
     { image: 'assets/images/Lenovo.jpeg', id: 1, name: 'Lenovo', price: '30000', desc: 'Lenovo V145-AMD-A6 15.6 inch HD Thin and Light Laptop (8GB RAM/ 500GB HDD/ Windows 10 Home with Lifetime Validity/ Black/ 2.1 kg)', ram: '8gb', os: 'Windows 10', processor: 'intel', graphics: 'Nvidea' },

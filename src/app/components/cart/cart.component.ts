@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
+
+export interface Transaction {
+  item: string;
+  cost: number;
+}
 
 @Component({
   selector: 'app-cart',
@@ -6,10 +12,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-
-  constructor() { }
+  cart:any=[];
+  constructor(private cartSrvc:CartService) { }
 
   ngOnInit() {
+    this.cart=this.cartSrvc.getItems();
+    // console.log(this.cart);
   }
 
 }

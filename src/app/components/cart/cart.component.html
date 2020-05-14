@@ -1,4 +1,18 @@
+
+
 <div class="container">
-    <br>
-    <b>Cart</b>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody *ngFor='let u of cart'>
+            <tr>
+                <td>{{u.name}}</td>
+                <td>{{u.price}}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
