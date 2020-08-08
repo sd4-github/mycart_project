@@ -9,6 +9,7 @@ export class CartService {
   constructor() { }
 
   addToCart(product) {
+    console.log(this.cartItems[0]);
     this.cartItems.push(product);
   }
 

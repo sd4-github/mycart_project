@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 
-export interface Transaction {
-  item: string;
-  cost: number;
-}
+
 
 @Component({
   selector: 'app-cart',
@@ -14,15 +11,17 @@ export interface Transaction {
 export class CartComponent implements OnInit {
   cart:any=[];
   quantity: number = 1;
-  constructor(private cartSrvc:CartService) { }
+
+  
+  constructor(private cartSrvc:CartService) {}
 
   ngOnInit() {
     this.cart=this.cartSrvc.getItems();
-    // console.log(this.cart);
+    console.log(this.cart[0]);
   }
 
   increment() {
-    this.quantity += 1;
+    this.quantity++;
   }
 
   decrement() {

@@ -4,17 +4,17 @@
      <b>Products</b>
         <div class="card-deck">
             
-            <div class="card" *ngFor='let u of products| paginate: { itemsPerPage: 3, currentPage: p }'>  
+            <div class="card" *ngFor='let u of productArray| paginate: { itemsPerPage: 3, currentPage: p }'>  
                 
                 <div class="card-body">
                     
-                    <img class="card-img-top" [src]='u.image' [alt]='u.name' style="width:100%">
+                    <img class="card-img-top" [src]='u.pimage' [alt]='u.pname' style="width:100%">
                     
                     <div class="container" style="text-align:center">  
                         <br>
-                        <h5 class="card-title">{{u.name}}</h5>
-                        <p class="card-text">{{u.desc}}</p>
-                        <span>₹</span><h3 class="card-text">{{u.price}}</h3>
+                        <h5 class="card-title">{{u.pname}}</h5>
+                        <p class="card-text">{{u.pdesc}}</p>
+                        <span>₹</span><h3 class="card-text">{{u.pvalue}}</h3>
                     </div>
                                         
                     <div class="container">
