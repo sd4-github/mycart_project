@@ -7,10 +7,10 @@ export class AuthServiceService {
 
   constructor() { }
 
-  setTokenWithInitialData(token: string, firstname: string, lastname: string) {
+  setTokenWithInitialData(token: string, email: string, usertype: string) {
     window.sessionStorage.setItem('token', token);
-    window.sessionStorage.setItem('firstname', firstname);
-    window.sessionStorage.setItem('lastname', lastname);
+    window.sessionStorage.setItem('email', email);
+    window.sessionStorage.setItem('usertype', usertype);
   }
 
   getToken() {
@@ -19,7 +19,7 @@ export class AuthServiceService {
 
   getAllData() {
     const allData = [];
-    allData.push(window.sessionStorage.getItem('firstname'), window.sessionStorage.getItem('lastname'));
+    allData.push(window.sessionStorage.getItem('email'), window.sessionStorage.getItem('usertype'));
     return allData;
   }
 

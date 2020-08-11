@@ -16,7 +16,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.showData=this.authsrvc.getAllData();
-    // console.log(this.showData);
+    console.log(this.showData);
   }
 
   onLogout(){

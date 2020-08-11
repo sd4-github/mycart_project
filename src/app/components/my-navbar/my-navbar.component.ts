@@ -26,6 +26,7 @@ export class MyNavbarComponent {
     , { image: 'assets/images/Hp.jpeg', id: 9, name: 'Hp', price: '₹21000', desc: 'HP Pavilion 14-inch Laptop (9th Gen A4-9125/4GB/1TB HDD/Win 10/MS Office 2019/AMD Radeon R3 Graphics), 14-cm0123au', ram: '4gb', os: 'windows 10', processor: 'intel', graphics: 'Raedon' }
   ]
   
+  //angular material
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),

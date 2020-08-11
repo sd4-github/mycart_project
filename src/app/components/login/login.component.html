@@ -16,6 +16,10 @@
             password is required
         </div>
         <br>
+        <div class="form-check">
+            <input formControlName='checkbox' type="checkbox" name="checkbox" id="checkbox" class="form-check-input" [checked]="true">
+             <label class="form-check-label" for="checkbox">Check me out</label>
+        </div> <br>
         <button [disabled]='loginForm.invalid' class="btn btn-primary">login</button>
     </form>
 

@@ -19,18 +19,19 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.loginForm = this.fb.group({
       email: [null, [Validators.required]],
-      password: [null, [Validators.required, Validators.maxLength(8)]]
+      password: [null, [Validators.required, Validators.maxLength(8)]],
+      checkbox: [true]
     })
   }
 
   loginUser(loginForm) {
     let formvalue = this.loginForm.getRawValue();
-    // console.log(formvalue);
+    console.log(formvalue);
     this.srvc.loginUser(formvalue).subscribe(data => {
-      // console.log(data);
+      console.log('userdtails:', data);
       this.userDetails = data;
       alert(this.userDetails.message);
-      this.authService.setTokenWithInitialData(this.userDetails.token, this.userDetails.full_name, this.userDetails.email);
+      this.authService.setTokenWithInitialData(this.userDetails.token, this.userDetails.email, this.userDetails.usertype);
       this.router.navigate(['dashboard']);
     })
   }
