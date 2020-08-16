@@ -14,11 +14,9 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { RoutingModule } from './routing/routing.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule} from '@angular/common/http';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MatSelectModule } from '@angular/material/select';
-
-
 
 @NgModule({
   declarations: [

@@ -28,10 +28,10 @@ export class LoginComponent implements OnInit {
     let formvalue = this.loginForm.getRawValue();
     console.log(formvalue);
     this.srvc.loginUser(formvalue).subscribe(data => {
-      console.log('userdtails:', data);
+      console.log('userdetails:', data);
       this.userDetails = data;
       alert(this.userDetails.message);
-      this.authService.setTokenWithInitialData(this.userDetails.token, this.userDetails.email, this.userDetails.usertype);
+      this.authService.setTokenWithInitialData(this.userDetails.token, this.userDetails.email, this.userDetails.usertype, this.userDetails.user_id);
       this.router.navigate(['dashboard']);
     })
   }

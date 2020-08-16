@@ -7,16 +7,25 @@
     
     <div class="card-body" style="text-align:left">
 
-        <img [src]="productDetails.image" [alt]="productDetails.name" style="width: 100%"> <br>
+        <img [src]="productDetails.pimage" [alt]="productDetails.pname" style="width: 100%"> <br>
        <div class="card-text">
-            Id: <h6>{{productDetails.id}}</h6> <br>
-            name: <h2 class="name">{{productDetails.name}}</h2> <br>
-            price: <br><span>₹</span><span><h2 class="price">{{productDetails.price}}</h2></span> <br>
-            desc: <h4>{{productDetails.desc}}</h4> <br>
-            ram: <h3>{{productDetails.ram}}</h3> <br>
+            Id: <h6>{{productDetails._id}}</h6> <br>
+            name: <h2 class="name">{{productDetails.pname}}</h2> <br>
+            price: <br><span>₹</span><span><h2 class="price">{{productDetails.pvalue}}</h2></span> <br>
+            desc: <h4>{{productDetails.pdesc}}</h4> <br>
+            <label for="quantity">Quantity</label>
+            <div>
+                <input type="number" name='quantity' type="number" name="quantity" [(ngModel)]="quantity" min="1">
+            </div>
+            <br>
+            <div class="container">
+                <button type="button" class="button" (click)='goCart(productDetails._id)'>Add to cart</button>
+            </div>            
+            
+            <!-- ram: <h3>{{productDetails.ram}}</h3> <br>
             os: <h4>{{productDetails.os}}</h4> <br>
             processor: <h4>{{productDetails.processor}}</h4> <br>
-            graphics: <h4>{{productDetails.graphics}}</h4> <br>
+            graphics: <h4>{{productDetails.graphics}}</h4> <br> -->
        </div>
 </div>
 </div>

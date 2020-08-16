@@ -8,3 +8,23 @@
 .price:hover, .price:active{
     color: #05ACD3;
 }
+
+.button {
+    color: white;
+    background-color: #012172;
+    color: white;;
+    border-color: #BBBF95;
+    text-align: center;
+    padding: 8px;
+    width:100%;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+.button:hover {
+    color: white;
+    background-color: #28a745;
+    border-color: white;
+    cursor: pointer;
+}

@@ -1,35 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 
-
-
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  cart:any=[];
-  quantity: number = 1;
+  cartY;
+  cartM;
+  constructor(private cartsrvc:CartService) {
+    this.cartsrvc.showcartProduct().subscribe(result => {
+      console.log('data', result);
+      this.cartY=result;
+      console.log(this.cartY.data);
+      this.cartM=this.cartY.data;
+    })
 
-  
-  constructor(private cartSrvc:CartService) {}
-
+  }
   ngOnInit() {
-    this.cart=this.cartSrvc.getItems();
-    console.log(this.cart[0]);
-  }
-
-  increment() {
-    this.quantity++;
-  }
-
-  decrement() {
-    if (this.quantity!=1) {
-      this.quantity -= 1;
-    } else {
-      this.quantity=1;
-    }
+    
   }
 
 }

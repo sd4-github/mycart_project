@@ -11,13 +11,13 @@
                 <th>Total</th>
             </tr>
         </thead>
-        <tbody *ngFor='let u of cart'>
+        <tbody *ngFor='let u of cartM'>
             <tr>
-                <td>{{u.id}}</td>
-                <td>{{u.name}}</td>
-                <td>{{u.price}}</td>
-                <td><button type="button" class="btn btn-sm" (click)="increment()">+</button> {{quantity}} <button type="button" class="btn btn-sm" (click)="decrement()">-</button></td>
-                <td>{{u.price * quantity}}</td>
+                <td>{{u.p_id}}</td>
+                <td>{{u.pname}}</td>
+                <td>{{u.pvalue}}</td>
+                <td>{{u.quantity}}</td>               
+                <td>{{u.pvalue * u.quantity}}</td>
             </tr>
         </tbody>
     </table>
