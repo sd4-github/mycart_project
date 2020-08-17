@@ -1,8 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { CartService } from 'src/app/services/cart.service';
 import { ProductsServiceService } from 'src/app/services/products-service.service';
-import { AuthServiceService } from 'src/app/services/auth-service.service';
 
 
 @Component({
@@ -28,6 +26,10 @@ export class DashboardComponent implements OnInit {
       this.productSrvc.productData=this.productArray;
       console.log(this.productSrvc.productData);
     })
+  }
+
+  goDetails(id){
+    this.router.navigate(['details',id]);
   }
 
 }

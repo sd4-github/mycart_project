@@ -15,6 +15,8 @@ export class ProductDetailsComponent implements OnInit {
 
 productDetails:any;
 productInfo;
+  products;
+  productArray
 uid;
 quantity;
 cartP
@@ -22,6 +24,7 @@ cartP
   constructor(private route: ActivatedRoute,private authsrvc:AuthServiceService,private cartsrvc:CartService, private productSrvc:ProductsServiceService,private router:Router) {}
 
   ngOnInit() {
+   
     console.log(this.productSrvc.productData);
     this.productInfo=this.productSrvc.productData;
     console.log(this.productInfo);

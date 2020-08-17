@@ -46,7 +46,7 @@
               <mat-select>
                 <input matInput [(ngModel)]='term' name='term'>
                 <mat-option *ngFor="let u of productData | filter: term">
-                  <a routerLink='/details/{{u.id}}'>{{u.name}}</a>
+                  <a routerLink='/details/{{u._id}}'>{{u.pname}}</a>
                 </mat-option>
               </mat-select>
             </mat-form-field>

@@ -11,7 +11,7 @@ export class ProductsServiceService {
 
   productUrl ="https://backend-api1.herokuapp.com/getprod";
   searchprodUrl = "https://backend-api1.herokuapp.com/searchprod";
-  productData;
+  productData=[];
 
   constructor(private http:HttpClient) { }
 

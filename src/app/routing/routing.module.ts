@@ -8,6 +8,7 @@ const routes:Routes=[
   { path: '', loadChildren:'../components/profile/profile/profile.module#ProfileModule'},
   { path: '', loadChildren: '../components/dashboard/dashboard/dashboard.module#DashboardModule'},
   { path: '', loadChildren:'../components/sign-up/signup/signup.module#SignupModule'},
+  { path: '', loadChildren:'../components/product-details/details/details.module#DetailsModule'},
   { path: '', loadChildren: '../components/login/login/login.module#LoginModule' }, //lazy loading old method
   { 
     path: '', 

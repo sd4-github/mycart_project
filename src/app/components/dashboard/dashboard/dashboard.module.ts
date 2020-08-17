@@ -8,7 +8,7 @@ import { NgxPaginationModule } from "ngx-pagination";
 
 
 const DashboardRoute: Routes = [
-  { path: 'dashboard', canActivate: [AuthGuardGuard], component: DashboardComponent}
+  { path: 'dashboard', canActivate: [AuthGuardGuard], component: DashboardComponent},
 ]
 
 
