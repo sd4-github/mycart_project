@@ -9,6 +9,7 @@
                 <th>Price</th>
                 <th>Quantity</th>
                 <th>Total</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody *ngFor='let u of cartM'>
@@ -18,7 +19,11 @@
                 <td>{{u.pvalue}}</td>
                 <td>{{u.quantity}}</td>               
                 <td>{{u.pvalue * u.quantity}}</td>
+                <td>
+                    <button type="button" class="button" (click)=deleteCartItem(u.p_id)>Delete</button>
+                </td>
             </tr>
         </tbody>
     </table>
+    <button type="button" class="button">Proceed To Chekout</button>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { CartService } from 'src/app/services/cart.service';
 export class CartComponent implements OnInit {
   cartY;
   cartM;
-  constructor(private cartsrvc:CartService) {
+  constructor(private cartsrvc: CartService, private router: Router) {
     this.cartsrvc.showcartProduct().subscribe(result => {
       console.log('data', result);
       this.cartY=result;
@@ -18,8 +19,17 @@ export class CartComponent implements OnInit {
     })
 
   }
-  ngOnInit() {
-    
+  ngOnInit() { 
+  }
+
+  deleteCartItem(p_id){
+    console.log('pid',p_id);
+    this.cartsrvc.deletecartProduct().subscribe(result=>{
+      console.log(result);
+      //below code refreshes the cart
+      this.cartM = this.cartM.filter(eachItem => eachItem.p_id !== p_id);
+      console.log(this.cartM);
+    })
   }
 
 }
