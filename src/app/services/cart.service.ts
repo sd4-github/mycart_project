@@ -56,8 +56,8 @@ export class CartService {
   postcheckoutProduct(cart:Cart): Observable<Cart[]> {
     return this.http.post<Cart[]>(this.postcheckoutUrl,cart).pipe(catchError(this.errorHandler));
   }
-  orderProduct(): Observable<Order[]> {
-    return this.http.get<Order[]>(this.orderUrl).pipe(catchError(this.errorHandler));
+  orderProduct(order:Order): Observable<Order[]> {
+    return this.http.get<Order[]>(this.orderUrl,order).pipe(catchError(this.errorHandler));
   }
 
   errorHandler(error: HttpErrorResponse) {

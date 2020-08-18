@@ -29,6 +29,21 @@ export class PreorderComponent implements OnInit {
     })
   }
 
+  order() {
+    let formvalue = this.orderForm.getRawValue();
+    console.log(formvalue);
+    this.cartSrvc.getcheckoutProduct(formvalue).subscribe(data => {
+      // console.log(data);
+      this.orderDetails = data;
+      alert(this.orderDetails.message);
+      console.log(this.orderDetails.message);
+      this.router.navigate(['/login']);
+    }, error => {
+      this.error_value = error;
+      // console.log(this.error_value);
+    })
+  }
+
 
 
 }
