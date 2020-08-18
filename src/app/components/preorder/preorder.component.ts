@@ -24,7 +24,7 @@ export class PreorderComponent implements OnInit {
     this.orderForm = this.fb.group({
       name: [null, [Validators.required]],
       email: [null, [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
-      mobilenum: [null, [Validators.required]],
+      mobilenum: [null, [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       address: [null, [Validators.required, Validators.maxLength(8)]]
     })
   }
@@ -32,15 +32,22 @@ export class PreorderComponent implements OnInit {
   order() {
     let formvalue = this.orderForm.getRawValue();
     console.log(formvalue);
-    this.cartSrvc.getcheckoutProduct(formvalue).subscribe(data => {
-      // console.log(data);
+    let order = {
+      name: formvalue.name,
+      email: formvalue.email,
+      mobilenum: formvalue.mobilenum,
+      address: formvalue.address,
+      user_id: this.cartSrvc.user_id
+    }
+    this.cartSrvc.postcheckoutProduct(order).subscribe(data => {
+      console.log(data);
       this.orderDetails = data;
       alert(this.orderDetails.message);
       console.log(this.orderDetails.message);
-      this.router.navigate(['/login']);
+      this.router.navigate(['/orderdetails']);
     }, error => {
       this.error_value = error;
-      // console.log(this.error_value);
+      console.log(this.error_value);
     })
   }
 

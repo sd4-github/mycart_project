@@ -3,7 +3,8 @@ import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http'
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Products } from "../products";
-import { Cart,Order } from "../cart";
+import { Cart } from "../cart";
+import { Order } from "../order";
 import { AuthServiceService } from "./auth-service.service";
 
 @Injectable({
@@ -27,7 +28,7 @@ export class CartService {
   deletecartprodUrl = "https://backend-api1.herokuapp.com/deletecartprod";
   getcheckoutUrl = "https://backend-api1.herokuapp.com/getcheckout";
   postcheckoutUrl = "https://backend-api1.herokuapp.com/postcheckout";
-  orderUrl = "https://backend-api1.herokuapp.com/order";
+  orderDetailsUrl = "https://backend-api1.herokuapp.com/order";
 
   constructor(private http: HttpClient,private srvc:AuthServiceService) { }
 
@@ -53,14 +54,14 @@ export class CartService {
   getcheckoutProduct(): Observable<Cart[]>{
     return this.http.get<Cart[]>(`${this.getcheckoutUrl}/${this.user_id}`).pipe(catchError(this.errorHandler));
   }
-  postcheckoutProduct(cart:Cart): Observable<Cart[]> {
-    return this.http.post<Cart[]>(this.postcheckoutUrl,cart).pipe(catchError(this.errorHandler));
+  postcheckoutProduct(order:Order): Observable<Order[]> {
+    return this.http.post<Order[]>(this.postcheckoutUrl,order).pipe(catchError(this.errorHandler));
   }
-  orderProduct(order:Order): Observable<Order[]> {
-    return this.http.get<Order[]>(this.orderUrl,order).pipe(catchError(this.errorHandler));
+  orderDetails(): Observable<Order[]> {
+    return this.http.get<Order[]>(`${this.orderDetailsUrl}/${this.user_id}`).pipe(catchError(this.errorHandler));
   }
 
   errorHandler(error: HttpErrorResponse) {
-    return throwError(error.error.message);
+    return throwError(error.message);
   }
 }

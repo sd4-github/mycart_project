@@ -1,0 +1,59 @@
+<div class="container">
+    <br>
+    <b>Order Details</b>
+    <br>
+    <!-- cart info header -->
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Cart Info:</th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody *ngFor='let u of cartInfo'>
+            <tr>
+                <td>productInfo:</td>
+                <td>{{u.p_id}}</td>
+                <td>{{u.pname}}</td>
+                <td>{{u.pvalue}}</td>
+                <td>{{u.quantity}}</td>
+                <td>{{u.pvalue * u.quantity}}</td>
+                <br>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- total -->
+    <table>
+        <thead>
+            <tr>
+                <th>Total:</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+               <td>{{orderN.total}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <!-- user info header -->
+    <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>User Info:</th>
+                </tr>
+            </thead>
+        <tbody>
+                <td>{{orderN.name}}
+                <br>{{orderN.email}}
+                <br>{{orderN.mobilenum}}
+                <br>{{orderN.address}}
+            </td>
+        </tbody>
+    </table>
+
