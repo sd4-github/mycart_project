@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
 
 @Component({
@@ -30,6 +30,11 @@ export class CartComponent implements OnInit {
       this.cartM = this.cartM.filter(eachItem => eachItem.p_id !== p_id);
       console.log(this.cartM);
     })
+  }
+
+  goCheckout(u){
+    console.log('goCheckout:',u);
+    this.router.navigate(['preorder']);
   }
 
 }

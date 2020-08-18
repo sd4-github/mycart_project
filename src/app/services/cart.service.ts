@@ -50,8 +50,8 @@ export class CartService {
   deletecartProduct(): Observable<Cart[]>{
     return this.http.get<Cart[]>(`${this.deletecartprodUrl}/${this.p_id}`).pipe(catchError(this.errorHandler));
   }
-  getcheckoutProduct(){
-    return this.http.get(this.getcheckoutUrl).pipe(catchError(this.errorHandler));
+  getcheckoutProduct(): Observable<Cart[]>{
+    return this.http.get<Cart[]>(`${this.getcheckoutUrl}/${this.user_id}`).pipe(catchError(this.errorHandler));
   }
   postcheckoutProduct(cart:Cart): Observable<Cart[]> {
     return this.http.post<Cart[]>(this.postcheckoutUrl,cart).pipe(catchError(this.errorHandler));

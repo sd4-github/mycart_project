@@ -1,0 +1,37 @@
+<br>
+<div class="container">
+    <b>Order Form</b>
+    <br>
+    <br />
+    <form (ngSubmit)='order()' [formGroup]='orderForm'>
+        name:
+        <input formControlName='name' type="text" class="form-control" placeholder="enter name">
+        <div class="alert alert-danger"
+            *ngIf="orderForm.get('name').hasError(required) && orderForm.get('name').touched">
+            email is required
+        </div>
+        <br>
+        email:
+        <input formControlName='email' type="email" class="form-control" placeholder="enter email">
+        <div class="alert alert-danger"
+            *ngIf="(orderForm.get('email').hasError(required) && orderForm.get('email').touched) || orderForm.get('email').errors?.pattern">
+            valid email is required
+        </div>
+        <br>
+        mobilnum:
+        <input formControlName='mobilnum' type="text" class="form-control" placeholder="enter mobilnum">
+        <div class="alert alert-danger"
+            *ngIf="orderForm.get('mobilnum').hasError(required) && orderForm.get('mobilnum').touched">
+            email is required
+        </div>
+        <br>
+        address:
+        <input formControlName='address' type="address" class="form-control" placeholder="enter address">
+        <div class="alert alert-danger" *ngIf="!orderForm.get('address').valid && orderForm.get('email').touched">
+            address is required and should be less than 10 char
+        </div>
+        <br>
+        <button [disabled]='orderForm.invalid' class="btn btn-primary">Order</button>
+    </form>
+    {{error_value}}
+</div>

@@ -15,7 +15,8 @@ const routes:Routes=[
     loadChildren: () => import('../components/cart/cart/cart.module').then(module => module.CartModule)
   },                                                                     //lazy loading new method
   { path: '', loadChildren: '../components/request-reset/request-reset/request-reset.module#RequestResetModule'},
-  { path: '', loadChildren: '../components/response-reset/response-reset/response-reset.module#ResponseResetModule'}
+  { path: '', loadChildren: '../components/response-reset/response-reset/response-reset.module#ResponseResetModule'},
+  { path: '', loadChildren: '../components/preorder/preorder/preorder.module#PreorderModule'}
 ]
 
 @NgModule({

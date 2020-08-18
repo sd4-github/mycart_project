@@ -38,6 +38,5 @@ export class SignUpComponent implements OnInit {
       // console.log(this.error_value);
     })
   }
-l 
 
 }

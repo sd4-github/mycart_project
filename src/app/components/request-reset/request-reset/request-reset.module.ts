@@ -4,6 +4,7 @@ import { RequestResetComponent } from "../request-reset.component";
 import { RouterModule, Routes } from "@angular/router";
 import { ReactiveFormsModule } from '@angular/forms';
 
+
 const requestResetRoute: Routes = [
   { path: 'requestReset', component: RequestResetComponent}
 ]
