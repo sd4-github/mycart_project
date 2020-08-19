@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
 
+Project Title – MyCart online ecommerce website
+
+Project Description- MyCart is a web-based application is a demo e-commerce store built using Angular 8 and TypeScript. The application lists the items that can be bought from the store. Every item can be searched and has its own page with more details. Any item can be added or removed from the shopping cart. User has to signup and then login to use the site. User can view and navigate to multiple products by paginating. 
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
