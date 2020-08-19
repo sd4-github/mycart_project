@@ -17,6 +17,7 @@ export class AdminService {
   _id: String;
   adminProductForm;
   userdelete_id;
+  adminProdDelete_id;
 
   // localtestUrl = "http://localhost:3200/";
   addprodUrl = "https://backend-api1.herokuapp.com/addprod";
@@ -43,7 +44,7 @@ export class AdminService {
     return this.http.patch<Products[]>(this.updateprodUrl,body).pipe(catchError(this.errorHandler));
   }
   deleteProduct(): Observable<Products[]> {
-    return this.http.get<Products[]>(`${this.deleteprodUrl}/${this._id}`).pipe(catchError(this.errorHandler));
+    return this.http.get<Products[]>(`${this.deleteprodUrl}/${this.adminProdDelete_id}`).pipe(catchError(this.errorHandler));
   }
   getUser(): Observable<User[]> {
     return this.http.get<User[]>(this.getuserUrl).pipe(catchError(this.errorHandler));

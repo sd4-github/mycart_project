@@ -12,7 +12,8 @@ import { AdminService } from "../../services/admin.service";
 export class AdminProductComponent implements OnInit {
 
 adminProduct;
-productArray
+productArray;
+adminProductDeleteId
 
   constructor(private router: Router, private adminService: AdminService) { }
 
@@ -25,5 +26,17 @@ productArray
       console.log(this.productArray);     
     })
   }
+
+  deleteProduct(id){
+    console.log(id);
+    this.adminService.adminProdDelete_id = id;
+    console.log(this.adminService.adminProdDelete_id);
+    this.adminProductDeleteId = this.adminService.adminProdDelete_id;
+    console.log(this.adminProductDeleteId);
+    this.adminService.deleteProduct().subscribe(deleteResult => {
+      console.log(deleteResult);
+    })
+  }
+
 
 }
