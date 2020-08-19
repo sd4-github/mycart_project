@@ -19,6 +19,7 @@ export class CartService {
   pname: String;
   pvalue: Number;
   pimage: String;
+  itemDeleteId;
 
   showprodUrl = "https://backend-api1.herokuapp.com/showprod";
   detailsprodUrl = "https://backend-api1.herokuapp.com/detailsprod/:_id";
@@ -49,7 +50,7 @@ export class CartService {
     return this.http.get<Cart[]>(this.updatecartUrl).pipe(catchError(this.errorHandler));
   }
   deletecartProduct(): Observable<Cart[]>{
-    return this.http.get<Cart[]>(`${this.deletecartprodUrl}/${this.p_id}`).pipe(catchError(this.errorHandler));
+    return this.http.get<Cart[]>(`${this.deletecartprodUrl}/${this.itemDeleteId}`).pipe(catchError(this.errorHandler));
   }
   getcheckoutProduct(): Observable<Cart[]>{
     return this.http.get<Cart[]>(`${this.getcheckoutUrl}/${this.user_id}`).pipe(catchError(this.errorHandler));

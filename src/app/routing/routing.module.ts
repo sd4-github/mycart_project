@@ -17,7 +17,11 @@ const routes:Routes=[
   { path: '', loadChildren: '../components/request-reset/request-reset/request-reset.module#RequestResetModule'},
   { path: '', loadChildren: '../components/response-reset/response-reset/response-reset.module#ResponseResetModule'},
   { path: '', loadChildren: '../components/preorder/preorder/preorder.module#PreorderModule'},
-  { path: '', loadChildren: '../components/order-details/order-details/order-details.module#OrderDetailsModule'}
+  { path: '', loadChildren: '../components/order-details/order-details/order-details.module#OrderDetailsModule'},
+  { path: '', loadChildren: '../components/admin/admin/admin.module#AdminModule'},
+  { path: '', loadChildren: '../components/admin-product/admin-product/admin-product.module#AdminProductModule'},
+  { path: '', loadChildren: '../components/admin-update/admin-update/admin-update.module#AdminUpdateModule'},
+  { path: '', loadChildren: '../components/admin-delete-user/admin-delete-user/admin-delete-user.module#AdminDeleteUserModule'}
 ]
 
 @NgModule({

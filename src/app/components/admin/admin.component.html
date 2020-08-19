@@ -1,0 +1,43 @@
+<div class="container">
+    <br>
+    <b>Admin Dashboard</b>
+    <br>
+    <br>
+<div class="container">
+    <b>Add product</b>
+    <br>
+    <br />
+    <form (ngSubmit)='createProduct()' [formGroup]='addProductForm'>
+        Product Name:
+        <input formControlName='pname' type="text" class="form-control" placeholder="enter product name">
+        <div class="alert alert-danger"
+            *ngIf="!addProductForm.get('pname').valid && addProductForm.get('pname').touched">
+            productname is required
+        </div>
+        <br>
+        Product Value:
+        <input formControlName='pvalue' type="number" class="form-control" placeholder="enter pvalue">
+        <div class="alert alert-danger"
+            *ngIf="(!addProductForm.get('pvalue').valid && addProductForm.get('pvalue').touched) || addProductForm.get('pvalue').errors?.pattern">
+            Valid Value is required
+        </div>
+        <br>
+        Product Description:
+        <input formControlName='pdesc' type="text" class="form-control" placeholder="enter pdesc">
+        <div class="alert alert-danger" *ngIf="!addProductForm.get('pdesc').valid && addProductForm.get('pdesc').touched">
+            pdesc is required
+        </div>
+        <br>
+        Product Image:
+        <input formControlName='pimage' type="file" class="form-control" (change)="uploadFile($event)" placeholder="enter pimage">
+        <div class="alert alert-danger"
+            *ngIf="!addProductForm.get('pimage').valid && addProductForm.get('pimage').touched">
+            product image is required
+        </div>
+        <br>
+        
+        <button [disabled]='addProductForm.invalid' class="btn btn-primary">Create</button>
+    </form>
+    {{error_value}}
+</div>
+</div>

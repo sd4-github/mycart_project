@@ -18,8 +18,8 @@ export class OrderDetailsComponent implements OnInit {
     this.cartSrvc.orderDetails().subscribe(result => {
       console.log(result);
       this.orderinfo=result;
-      console.log(this.orderinfo.data[0]);
-      this.orderM = this.orderinfo.data[0];
+      console.log(this.orderinfo.data);
+      this.orderM = this.orderinfo.data;
       console.log(this.orderM);
       this.cartInfo = this.orderM.orderproduct;
       console.log(this.cartInfo);
