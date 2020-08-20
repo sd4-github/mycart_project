@@ -9,14 +9,14 @@
         <input formControlName='firstname' type="text" class="form-control" placeholder="enter firstname">
         <div class="alert alert-danger"
             *ngIf="loginForm.get('firstname').hasError('required') && loginForm.get('firstname').touched">
-            email is required
+            firstname is required
         </div>
         <br>
         lastname:
         <input formControlName='lastname' type="text" class="form-control" placeholder="enter lastname">
         <div class="alert alert-danger"
             *ngIf="loginForm.get('lastname').hasError('required') && loginForm.get('lastname').touched">
-            email is required
+            lastname is required
         </div>
         <br>
         email:
