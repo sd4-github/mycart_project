@@ -7,21 +7,21 @@
         name:
         <input formControlName='name' type="text" class="form-control" placeholder="enter name">
         <div class="alert alert-danger"
-            *ngIf="orderForm.get('name').hasError(required) && orderForm.get('name').touched">
+            *ngIf="orderForm.get('name').hasError('required') && orderForm.get('name').touched">
             name is required
         </div>
         <br>
         email:
         <input formControlName='email' type="email" class="form-control" placeholder="enter email">
         <div class="alert alert-danger"
-            *ngIf="(orderForm.get('email').hasError(required) && orderForm.get('email').touched) || orderForm.get('email').errors?.pattern">
+            *ngIf="(orderForm.get('email').hasError('required') && orderForm.get('email').touched) || orderForm.get('email').errors?.pattern">
             valid email is required
         </div>
         <br>
         mobile:
         <input formControlName='mobilenum' type="text" class="form-control" placeholder="enter mobilenum">
         <div class="alert alert-danger"
-            *ngIf="orderForm.get('mobilenum').hasError(required) && orderForm.get('mobilenum').touched|| orderForm.get('mobilenum').errors?.pattern">
+            *ngIf="orderForm.get('mobilenum').hasError('required') && orderForm.get('mobilenum').touched|| orderForm.get('mobilenum').errors?.pattern">
             10 digit mobile number is required
         </div>
         <br>

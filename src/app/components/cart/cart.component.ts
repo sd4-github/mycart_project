@@ -35,7 +35,7 @@ export class CartComponent implements OnInit {
   }
 
   goCheckout(u){
-    console.log('goCheckout:',u);
+    console.log('goCheckout:');
     this.router.navigate(['preorder']);
   }
 

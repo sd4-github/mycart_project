@@ -6,7 +6,7 @@
         email:
         <input formControlName='email' type="email" class="form-control" placeholder="enter email">
         <div class="alert alert-danger"
-            *ngIf="loginForm.get('email').hasError(required) && loginForm.get('email').touched">
+            *ngIf="loginForm.get('email').hasError('required') && loginForm.get('email').touched">
             email is required
         </div>
         <br>

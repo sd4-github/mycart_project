@@ -9,7 +9,7 @@ import { ProductsServiceService } from 'src/app/services/products-service.servic
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  p: Number = 1;
+  p: number = 1;
   products:any;
   productArray:any;
   
