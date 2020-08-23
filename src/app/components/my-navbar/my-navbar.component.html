@@ -11,6 +11,9 @@
       <a mat-list-item routerLink="dashboard">Dashboard</a>
       <a mat-list-item *ngIf='!token' routerLink="signup">Signup</a>
       <a mat-list-item *ngIf='!token' routerLink="login">Login</a>
+      <a mat-list-item *ngIf="usertype === 'admin'" routerLink="admin">Admin</a>
+      <a mat-list-item *ngIf="usertype === 'admin'" routerLink="admin-product">Admin-Product</a>
+      <a mat-list-item *ngIf="usertype === 'admin'" routerLink="admin-delete-user">Admin-User</a>
       <a mat-list-item routerLink="profile">Profile</a>
       <a mat-list-item *ngIf='token' style="cursor: pointer;" (click)='onLogout()'>Logout</a>
       

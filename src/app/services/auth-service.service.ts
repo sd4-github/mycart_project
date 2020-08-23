@@ -20,6 +20,9 @@ export class AuthServiceService {
   getUserId() {
     return window.sessionStorage.getItem('user_id')
   }
+  getUserType() {
+    return window.sessionStorage.getItem('usertype')
+  }
 
   getAllData() {
     const allData = [];
