@@ -4,24 +4,53 @@ import { Routes,RouterModule } from "@angular/router";
 
 
 const routes:Routes=[
-  { path: '', loadChildren:'../components/home/home/home.module#HomeModule'},
-  { path: '', loadChildren:'../components/profile/profile/profile.module#ProfileModule'},
-  { path: '', loadChildren: '../components/dashboard/dashboard/dashboard.module#DashboardModule'},
-  { path: '', loadChildren:'../components/sign-up/signup/signup.module#SignupModule'},
-  { path: '', loadChildren:'../components/product-details/details/details.module#DetailsModule'},
-  { path: '', loadChildren: '../components/login/login/login.module#LoginModule' }, //lazy loading old method
+  
+  { path: '',
+    loadChildren:() => import('../components/home/home/home.module').then(module => module.HomeModule)
+  },
+  { path: '',
+    loadChildren:() => import('../components/profile/profile/profile.module').then(module => module.ProfileModule)
+  },
+  { path: '',
+    loadChildren:() => import('../components/dashboard/dashboard/dashboard.module').then(module => module.DashboardModule)
+  },
+  { path: '', 
+    loadChildren:() => import('../components/sign-up/signup/signup.module').then(module => module.SignupModule)
+  },
+  { path: '',
+    loadChildren:() => import('../components/product-details/details/details.module').then(module => module.DetailsModule)
+  },
+  { path: '',
+    loadChildren:() => import( '../components/login/login/login.module').then(module => module.LoginModule)
+  }, 
   { 
     path: '', 
     loadChildren: () => import('../components/cart/cart/cart.module').then(module => module.CartModule)
-  },                                                                     //lazy loading new method
-  { path: '', loadChildren: '../components/request-reset/request-reset/request-reset.module#RequestResetModule'},
-  { path: '', loadChildren: '../components/response-reset/response-reset/response-reset.module#ResponseResetModule'},
-  { path: '', loadChildren: '../components/preorder/preorder/preorder.module#PreorderModule'},
-  { path: '', loadChildren: '../components/order-details/order-details/order-details.module#OrderDetailsModule'},
-  { path: '', loadChildren: '../components/admin/admin/admin.module#AdminModule'},
-  { path: '', loadChildren: '../components/admin-product/admin-product/admin-product.module#AdminProductModule'},
-  { path: '', loadChildren: '../components/admin-update/admin-update/admin-update.module#AdminUpdateModule'},
-  { path: '', loadChildren: '../components/admin-delete-user/admin-delete-user/admin-delete-user.module#AdminDeleteUserModule'}
+  },
+  { path: '', 
+    loadChildren: () => import('../components/request-reset/request-reset/request-reset.module').then(module => module.RequestResetModule)
+  },
+  { path: '', 
+    loadChildren: () => import('../components/response-reset/response-reset/response-reset.module').then(module => module.ResponseResetModule)
+  },
+  { path: '', 
+    loadChildren: () => import('../components/preorder/preorder/preorder.module').then(module => module.PreorderModule)
+  },
+  { path: '', 
+    loadChildren: () => import('../components/order-details/order-details/order-details.module').then(module => module.OrderDetailsModule)
+  },
+  { path: '', 
+    loadChildren: () => import('../components/admin/admin/admin.module').then(module => module.AdminModule)
+  },
+  { path: '', 
+    loadChildren: () => import('../components/admin-product/admin-product/admin-product.module').then(module => module.AdminProductModule)
+  },
+  { path: '', 
+    loadChildren: () => import('../components/admin-update/admin-update/admin-update.module').then(module => module.AdminUpdateModule)
+  },
+  { path: '', 
+    loadChildren: () => import('../components/admin-delete-user/admin-delete-user/admin-delete-user.module').then(module => module.AdminDeleteUserModule)
+  }
 ]
 
 @NgModule({
