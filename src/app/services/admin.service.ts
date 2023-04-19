@@ -19,14 +19,14 @@ export class AdminService {
   userdelete_id;
   adminProdDelete_id;
 
-  // localtestUrl = "http://localhost:3200/";
-  addprodUrl = "https://backend-api1.herokuapp.com/addprod";
-  getprodUrl = "https://backend-api1.herokuapp.com/getprod";
-  getUpdateprodUrl = "https://backend-api1.herokuapp.com/editprod";
-  updateprodUrl = "https://backend-api1.herokuapp.com/updateprod";
-  deleteprodUrl = "https://backend-api1.herokuapp.com/deleteprod";
-  getuserUrl = "https://backend-api1.herokuapp.com/getuser";
-  deleteuserUrl = "https://backend-api1.herokuapp.com/deleteuser";
+  // prodUrl = "https://backend-api1.herokuapp.com";
+  addprodUrl = "http://localhost:3200/addprod";
+  getprodUrl = "http://localhost:3200/getprod";
+  getUpdateprodUrl = "http://localhost:3200/editprod";
+  updateprodUrl = "http://localhost:3200/updateprod";
+  deleteprodUrl = "http://localhost:3200/deleteprod";
+  getuserUrl = "http://localhost:3200/getuser";
+  deleteuserUrl = "http://localhost:3200/deleteuser";
 
 
   constructor(private http: HttpClient, private srvc: AuthServiceService) { }

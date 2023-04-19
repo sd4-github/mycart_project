@@ -9,8 +9,8 @@ import { Products } from "../products";
 })
 export class ProductsServiceService {
 
-  productUrl ="https://backend-api1.herokuapp.com/getprod";
-  searchprodUrl = "https://backend-api1.herokuapp.com/searchprod";
+  productUrl ="http://localhost:3200/getprod";
+  searchprodUrl = "http://localhost:3200/searchprod";
   productData=[];
 
   constructor(private http:HttpClient) { }

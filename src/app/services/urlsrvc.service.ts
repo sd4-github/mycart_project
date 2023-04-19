@@ -10,11 +10,11 @@ import { catchError } from "rxjs/operators";
 })
 export class UrlsrvcService {
 
-  registerUrl = 'https://backend-api1.herokuapp.com/register';
-  loginUrl = 'https://backend-api1.herokuapp.com/login';
-  requestresetUrl = 'https://backend-api1.herokuapp.com/req-reset-password';
-  validPassUrl = 'https://backend-api1.herokuapp.com/valid-password-token';
-  newPassUrl = 'https://backend-api1.herokuapp.com/new-password';
+  registerUrl = 'http://localhost:3200/register';
+  loginUrl = 'http://localhost:3200/login';
+  requestresetUrl = 'http://localhost:3200/req-reset-password';
+  validPassUrl = 'http://localhost:3200/valid-password-token';
+  newPassUrl = 'http://localhost:3200/new-password';
 
   resS;
 

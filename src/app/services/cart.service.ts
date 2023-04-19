@@ -21,15 +21,15 @@ export class CartService {
   pimage: String;
   itemDeleteId;
 
-  showprodUrl = "https://backend-api1.herokuapp.com/showprod";
-  detailsprodUrl = "https://backend-api1.herokuapp.com/detailsprod/:_id";
-  showcartUrl = "https://backend-api1.herokuapp.com/showcart";
-  addtocartUrl = "https://backend-api1.herokuapp.com/addtocart";
-  updatecartUrl = "https://backend-api1.herokuapp.com/updatecart";
-  deletecartprodUrl = "https://backend-api1.herokuapp.com/deletecartprod";
-  getcheckoutUrl = "https://backend-api1.herokuapp.com/getcheckout";
-  postcheckoutUrl = "https://backend-api1.herokuapp.com/postcheckout";
-  orderDetailsUrl = "https://backend-api1.herokuapp.com/order";
+  showprodUrl = "http://localhost:3200/showprod";
+  detailsprodUrl = "http://localhost:3200/detailsprod/:_id";
+  showcartUrl = "http://localhost:3200/showcart";
+  addtocartUrl = "http://localhost:3200/addtocart";
+  updatecartUrl = "http://localhost:3200/updatecart";
+  deletecartprodUrl = "http://localhost:3200/deletecartprod";
+  getcheckoutUrl = "http://localhost:3200/getcheckout";
+  postcheckoutUrl = "http://localhost:3200/postcheckout";
+  orderDetailsUrl = "http://localhost:3200/order";
 
   constructor(private http: HttpClient,private srvc:AuthServiceService) { }
 
