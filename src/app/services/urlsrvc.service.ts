@@ -10,11 +10,14 @@ import { catchError } from "rxjs/operators";
 })
 export class UrlsrvcService {
 
-  registerUrl = 'http://localhost:3200/register';
-  loginUrl = 'http://localhost:3200/login';
-  requestresetUrl = 'http://localhost:3200/req-reset-password';
-  validPassUrl = 'http://localhost:3200/valid-password-token';
-  newPassUrl = 'http://localhost:3200/new-password';
+  serverUrl = "https://mycart-backend.onrender.com";
+  // serverUrl = "http://localhost:3200"
+
+  registerUrl = `${this.serverUrl}/register`;
+  loginUrl = `${this.serverUrl}/login`;
+  requestresetUrl = `${this.serverUrl}/req-reset-password`;
+  validPassUrl = `${this.serverUrl}/valid-password-token`;
+  newPassUrl = `${this.serverUrl}/new-password`;
 
   resS;
 

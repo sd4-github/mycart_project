@@ -21,15 +21,18 @@ export class CartService {
   pimage: String;
   itemDeleteId;
 
-  showprodUrl = "http://localhost:3200/showprod";
-  detailsprodUrl = "http://localhost:3200/detailsprod/:_id";
-  showcartUrl = "http://localhost:3200/showcart";
-  addtocartUrl = "http://localhost:3200/addtocart";
-  updatecartUrl = "http://localhost:3200/updatecart";
-  deletecartprodUrl = "http://localhost:3200/deletecartprod";
-  getcheckoutUrl = "http://localhost:3200/getcheckout";
-  postcheckoutUrl = "http://localhost:3200/postcheckout";
-  orderDetailsUrl = "http://localhost:3200/order";
+  serverUrl = "https://mycart-backend.onrender.com";
+  // serverUrl = "http://localhost:3200"
+
+  showprodUrl = `${this.serverUrl}/showprod`;
+  detailsprodUrl = `${this.serverUrl}/detailsprod/:_id`;
+  showcartUrl = `${this.serverUrl}/showcart`;
+  addtocartUrl = `${this.serverUrl}/addtocart`;
+  updatecartUrl = `${this.serverUrl}/updatecart`;
+  deletecartprodUrl = `${this.serverUrl}/deletecartprod`;
+  getcheckoutUrl = `${this.serverUrl}/getcheckout`;
+  postcheckoutUrl = `${this.serverUrl}/postcheckout`;
+  orderDetailsUrl = `${this.serverUrl}/order`;
 
   constructor(private http: HttpClient,private srvc:AuthServiceService) { }
 

@@ -9,8 +9,11 @@ import { Products } from "../products";
 })
 export class ProductsServiceService {
 
-  productUrl ="http://localhost:3200/getprod";
-  searchprodUrl = "http://localhost:3200/searchprod";
+  serverUrl = "https://mycart-backend.onrender.com";
+  // serverUrl = "http://localhost:3200"
+
+  productUrl =`${this.serverUrl}/getprod`;
+  searchprodUrl = `${this.serverUrl}/searchprod`;
   productData=[];
 
   constructor(private http:HttpClient) { }
